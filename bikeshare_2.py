@@ -44,10 +44,10 @@ def city_input():
 
 
 def get_time():
-    '''
+    """
     the code below asks the user to choose between month and day of month,
     day of the week or no filters
-    '''
+    """
     time_period = input(
         '\nYou want to filter the data by month and day of the month, day of the week, or you do not want to filter '
         'at all? Type "no" for no period filter.\n')
