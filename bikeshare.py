@@ -15,9 +15,11 @@ def city_input():
     """
     This function starts the user interface by introduction and
     asking the user with the city he/she wants to analyze
+
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     print('\n')
+
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     print('Enter the city you want to analyze the data for:')
     print('Chicago: 1')
@@ -46,8 +48,9 @@ def city_input():
 
 def get_time():
     """
-    the code below asks the user to choose between month and day of month,
+    The code below asks the user to choose between month and day of month,
     day of the week or no filters
+
     """
     time_period = input(
         '\nYou want to filter the data by month and day of the month, day of the week, or you do not want to filter '
@@ -55,23 +58,25 @@ def get_time():
     time_period = time_period.lower()
 
     while True:
-        if time_period == "month":
+        if time_period == "month": # if data is filtered by month
             while True:
                 day_month = input(
                     "\nDo you want to filter the data by day of the month too? Type 'YES' or 'NO'\n").lower()
-                if day_month == "no":
+                if day_month == "no": 
                     print('\n The data is now being filtered by month...\n')
                     return 'month'
-                elif day_month == "yes":
+                elif day_month == "yes": # if data is further drilled down by day of month
                     print('\n The data is now being filtered by month and day of the month...\n')
                     return 'day_of_month'
 
-        if time_period == "day":
+        if time_period == "day": # if data is filtered by day of week
             print('\n The data is now being filtered by the day of the week...\n')
             return 'day_of_week'
-        elif time_period == "no":
+        
+        elif time_period == "no": # if data is not filtered at all
             print('\n No period filter is being applied to the data\n')
             return "none"
+        
         time_period = input(
             "\n Please choose a period filter option between 'month', 'day' of the week, or none (no) \n").lower()
 
@@ -148,6 +153,7 @@ def time_filters(df, time, month, week_day, md):
                     and the day number (at index [1])
     Result:
     df - dataframe to be used for final calculation
+    
     """
     global day_of_week
     print('Data loaded. Now computing statistics... \n')
